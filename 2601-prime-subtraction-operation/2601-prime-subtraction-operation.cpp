@@ -31,18 +31,9 @@ public:
 
                 // 조건에 맞는 p가 없으면 실패
                 if(p == nums[i]) return false;
-                else
-                {
-                    nums[i] -= p;
-                }
+                else nums[i] -= p;
             }
         }
-
-        for(int i = 0; i < (int)nums.size(); i++)
-        {
-            cout << nums[i] << " ";
-        }
-        cout << "\n";
 
         return true;
     }
