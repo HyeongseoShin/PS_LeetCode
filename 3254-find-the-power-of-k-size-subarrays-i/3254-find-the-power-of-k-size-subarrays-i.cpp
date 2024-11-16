@@ -14,7 +14,7 @@ public:
             {
                 if(nums[i+j] < nums[i+j+1] && nums[i+j+1] - nums[i+j] < 2)
                 {
-                    maxVal = max(maxVal, nums[i+j+1]);
+                    maxVal = nums[i+j+1];
                 }
                 else
                 {
