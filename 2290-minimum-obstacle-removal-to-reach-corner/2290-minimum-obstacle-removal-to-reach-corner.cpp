@@ -8,6 +8,9 @@ Queue대신 Deque를 사용함!
 
 가중치 => 0 ---> dq.push_front()
 가중치 => 1 ---> dq.push_back()
+
+-- 벽이 없는 곳을 최대한 먼저 가는 느낌??
+-- 벽이 있으면 나중에 가는 느낌??
 */
 
 class Solution {
@@ -49,6 +52,15 @@ public:
                     else dq.push_back({nX, nY});
                 }
             }
+        }
+
+        for(int i = 0; i < m; i++)
+        {
+            for(int j = 0; j < n; j++)
+            {
+                cout << dst[i][j] << " ";
+            }
+            cout << "\n";
         }
 
         return dst[m-1][n-1];
