@@ -49,8 +49,7 @@ public:
                 // 인접한 칸과의 차이가 홀수 ==> 칸에 적힌시간일때 갈 수 있음
                 int waitTime = ((grid[nX][nY] - curTime) % 2 == 0) ? 1 : 0;
 
-                // 만약 바로 갈 수 있으면 curTime + 1
-                // 바로 갈 수 없고 왔다갔다 한 이후에 갈 수 있으면 grid[nX][nY] + waitTime;
+                // 현재 시간 + 1 vs 인접한 칸에 적혀있는 시간 + 기다려야하는 시간 중 큰 수
                 int nextTime = max(curTime + 1, grid[nX][nY] + waitTime);
 
                 pq.push({nextTime, {nX, nY}});
