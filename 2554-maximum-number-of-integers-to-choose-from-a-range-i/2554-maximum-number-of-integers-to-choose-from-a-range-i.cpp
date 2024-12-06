@@ -15,14 +15,17 @@ public:
 
         for(int i = 1; i <= n; i++)
         {
-            if(nums[i] && sum + i <= maxSum)
+            if(nums[i])
             {
+                if(sum + i > maxSum)
+                {
+                    return ans;
+                }
+                
                 sum += i;
                 ans++;
             }
         }
-
-        cout << "sum: " << sum << " ans: " << ans << "\n";
 
         return ans;
     }
