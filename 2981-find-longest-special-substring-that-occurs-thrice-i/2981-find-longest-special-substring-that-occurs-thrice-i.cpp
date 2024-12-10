@@ -26,7 +26,7 @@ public:
 
             st = en; 
         }
-        
+
         // 중복 제거
         sort(subString.begin(), subString.end(), greater<>());
         subString.erase(unique(subString.begin(), subString.end()), subString.end());
