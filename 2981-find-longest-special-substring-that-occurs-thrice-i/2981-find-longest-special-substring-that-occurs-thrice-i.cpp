@@ -26,14 +26,15 @@ public:
 
             st = en; 
         }
-
+        
+        // 중복 제거
         sort(subString.begin(), subString.end(), greater<>());
         subString.erase(unique(subString.begin(), subString.end()), subString.end());
 
-        for(int i = 0; i < subString.size(); i++)
-        {
-            cout << subString[i] << "\n";
-        }
+        // for(int i = 0; i < subString.size(); i++)
+        // {
+        //     cout << subString[i] << "\n";
+        // }
 
         for(int i = 0; i < subString.size(); i++)
         {
@@ -51,6 +52,7 @@ public:
                     if(s[k] != subString[i][k - j])
                     {
                         isPossible = false;
+                        break;
                     }
                 }
 
