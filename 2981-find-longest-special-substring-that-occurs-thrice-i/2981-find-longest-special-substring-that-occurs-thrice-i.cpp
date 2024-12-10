@@ -1,6 +1,6 @@
 /*
 투포인터로 special한 subString 구한 후
-for문으로 전체 검사
+for문으로 전체 검사 (브루트 포스)
 */
 
 class Solution {
