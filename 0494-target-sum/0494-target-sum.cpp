@@ -1,20 +1,34 @@
 class Solution {
 public:
-    int func(vector<int>& nums, int t, int idx, int sum)
+    int ans = 0;
+    int n;
+    int t;
+    vector<int> v;
+
+    void func(int idx, int sum)
     {
-        if(idx == nums.size())
+        if(idx == n)
         {
-            return (sum == t) ? 1 : 0;
+            if(sum == t)
+            {
+                ans++;
+            }
+            return;
         }
 
-        int add = func(nums, t, idx+1, sum + nums[idx]);
-        int sub = func(nums, t, idx+1, sum - nums[idx]);
-
-        return add + sub;
+        func(idx+1, sum + v[idx]);
+        func(idx+1, sum - v[idx]);
     }
 
     int findTargetSumWays(vector<int>& nums, int target)
     {
-        return func(nums, target, 0, 0);
+        n = (int)nums.size();
+        t = target;
+
+        for(int i = 0; i < n; i++) v.push_back(nums[i]);
+
+        func(0, 0);
+
+        return ans;
     }
 };
