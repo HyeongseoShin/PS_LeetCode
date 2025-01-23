@@ -31,7 +31,7 @@ public:
             auto [curX, curY] = q.front();
             q.pop();
 
-            if(row[curX] >= 2 || col[curY] >= 2) ans++;
+            if(row[curX] > 1 || col[curY] > 1) ans++;
         }
 
         return ans;
